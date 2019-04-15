@@ -43,3 +43,17 @@ module "private_subnets" {
   # https://github.com/hashicorp/terraform/issues/4149
   az_ngw_count = 3
 }
+
+output "vpc_id" {
+  value = "${module.vpc.vpc_id}"
+}
+
+output "public_subnets" {
+  value = "${module.public_subnets.az_subnet_ids}"
+}
+
+output "private_subnets" {
+  value = "${module.private_subnets.az_subnet_ids}"
+}
+
+
